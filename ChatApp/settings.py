@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-&uj1zrri_g#2r&i3#r6+)l&i=o)jy$97lk$#%aw^u(6(4cg)ru
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "chatapp-tfcs.onrender.com"]
 
 
 # Application definition
