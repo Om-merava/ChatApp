@@ -132,7 +132,11 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
+# CHANNEL_LAYERS = {
+#     "default": {
+#         "BACKEND": "channels.layers.InMemoryChannelLayer"
+#     }
+# }
 
 LOGIN_REDIRECT_URL = "chat-page"
 LOGOUT_REDIRECT_URL = "login-user"
@@ -141,8 +145,10 @@ LOGOUT_REDIRECT_URL = "login-user"
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {"hosts": "redis://default:ATj1AAIjcDEwZThiYTI5OGU3MTM0YjA0YTJiYmMwNjVmMmVhODhhZnAxMA@fit-pelican-14581.upstash.io:6379"},
-    },
+        "CONFIG": {
+            "hosts": ["redis://default:ATj1AAIjcDEwZThiYTI5OGU3MTM0YjA0YTJiYmMwNjVmMmVhODhhZnAxMA@fit-pelican-14581.upstash.io:6379"],
+        },
+    }
 }
 
 
