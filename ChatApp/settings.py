@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-&uj1zrri_g#2r&i3#r6+)l&i=o)jy$97lk$#%aw^u(6(4cg)ru
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1", "localhost", "chatapp-tfcs.onrender.com"]
+ALLOWED_HOSTS = ["chatapp-tfcs.onrender.com", "localhost", "127.0.0.1"]
+CSRF_TRUSTED_ORIGINS = ["https://chatapp-tfcs.onrender.com"]
+
+
 
 
 # Application definition
@@ -129,11 +132,17 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels.layers.InMemoryChannelLayer"
-    }
-}
+
 
 LOGIN_REDIRECT_URL = "chat-page"
 LOGOUT_REDIRECT_URL = "login-user"
+
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {"hosts": "redis://default:ATj1AAIjcDEwZThiYTI5OGU3MTM0YjA0YTJiYmMwNjVmMmVhODhhZnAxMA@fit-pelican-14581.upstash.io:6379"},
+    },
+}
+
+
