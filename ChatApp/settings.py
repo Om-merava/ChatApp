@@ -144,9 +144,10 @@ LOGOUT_REDIRECT_URL = "login-user"
 
 CHANNEL_LAYERS = {
     "default": {
-        "BACKEND": "channels.layers.InMemoryChannelLayer"
+        "BACKEND": "channels.layers.DatabaseChannelLayer",
     }
 }
+
 
 
 
