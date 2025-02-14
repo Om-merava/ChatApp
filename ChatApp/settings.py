@@ -144,11 +144,9 @@ LOGOUT_REDIRECT_URL = "login-user"
 
 CHANNEL_LAYERS = {
     "default": {
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": ["redis://default:ATj1AAIjcDEwZThiYTI5OGU3MTM0YjA0YTJiYmMwNjVmMmVhODhhZnAxMA@fit-pelican-14581.upstash.io:6379"],
-        },
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
     }
 }
+
 
 
